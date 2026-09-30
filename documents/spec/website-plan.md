@@ -35,7 +35,7 @@ Decisiones de Valeria:
 - **Footer mínimo:** © año, links de redes y "Back to top".
 
 ### Home (`/`), una sola página con scroll
-1. **Hero editorial:** "Valeria" y "Palacios" en tipografía gigante, a los lados de una foto vertical tipo polaroid, con una línea pequeña debajo (ej. "ciudad, 2026"). En móvil el nombre se apila arriba y abajo de la foto.
+1. **Hero editorial (frase con fotos):** tu nombre y una intro corta como una sola frase grande en Bricolage, con 2 o 3 fotos pequeñas redondeadas metidas dentro del texto (una circular con tu retrato, una píldora horizontal y una vertical), que se inclinan un poco al pasar el cursor. Alineada a la izquierda y anclada abajo, con una línea fina y debajo "Ciudad, año" y "Scroll ↓". Se eligió para diferenciarse del hero simétrico de Joelle.
 2. **About:** párrafo de bio centrado en tipografía mediana, con alguna palabra de acento en color `brand` (como el "sidequests" de Joelle) y una segunda foto opcional. Sin título grande: solo la etiqueta "About". El resto de las secciones mantiene etiqueta + título.
 3. **Experience:** `Accordion` de shadcn estilo Nicolas (rol, empresa y fechas; al abrir se ve el detalle).
 4. **Projects:** grid de 2 columnas (1 en móvil) con imagen grande, título, descripción de una línea y "Learn more →", que lleva a `/projects/[slug]`.

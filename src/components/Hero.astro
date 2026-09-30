@@ -1,53 +1,79 @@
 ---
 import { Image } from 'astro:assets';
 import portrait from '@/assets/placeholders/hero-portrait.jpg';
+import detailPhoto from '@/assets/placeholders/detail-photo.jpg';
+import aboutPhoto from '@/assets/placeholders/about-photo.jpg';
 
-const firstName = 'Valeria';
-const lastName = 'Palacios';
-const caption = 'City, 2026'; // placeholder — Phase 5
+// Placeholder copy and photos — Phase 5
+const location = 'City, 2026';
+const photoSizes = '(min-width: 768px) 11rem, 7rem';
 ---
 
-<section id="top" class="flex min-h-dvh items-center overflow-hidden pt-16">
-  <div class="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6">
-    <h1 class="sr-only">{firstName} {lastName}</h1>
+<section id="top" class="flex min-h-[72svh] flex-col justify-end pt-16 lg:min-h-dvh">
+  <div class="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6 md:pb-20">
+    <!-- Name + intro as one editorial sentence, with small photos set inline in the text -->
+    <h1 class="hero-line">
+      Valeria Palacios{' '}
+      <span class="hero-photo hero-photo--round">
+        <Image src={portrait} alt="Portrait of Valeria Palacios" widths={[160, 320]} sizes={photoSizes} loading="eager" fetchpriority="high" />
+      </span>{' '}
+      builds thoughtful products and writes about{' '}
+      <span class="hero-photo">
+        <Image src={detailPhoto} alt="" widths={[200, 400]} sizes={photoSizes} loading="eager" />
+      </span>{' '}
+      curiosity, craft and{' '}
+      <span class="hero-photo hero-photo--tall">
+        <Image src={aboutPhoto} alt="" widths={[160, 320]} sizes={photoSizes} loading="eager" />
+      </span>{' '}
+      everyday things.
+    </h1>
 
-    <div
-      class="grid grid-cols-1 items-center justify-items-center gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-8 lg:gap-12"
-    >
-      <span class="hero-name md:justify-self-end" aria-hidden="true">{firstName}</span>
-
-      <figure class="w-[70vw] max-w-xs -rotate-2 bg-white p-3 pb-4 shadow-[0_10px_30px_-12px_rgb(0_0_0/0.35)] md:w-52 lg:w-72">
-        <Image
-          src={portrait}
-          alt="Portrait of Valeria Palacios"
-          widths={[320, 480, 640, 800]}
-          sizes="(min-width: 1024px) 18rem, (min-width: 768px) 13rem, 70vw"
-          loading="eager"
-          fetchpriority="high"
-          class="aspect-4/5 w-full object-cover"
-        />
-        <figcaption class="pt-3 text-center text-sm text-muted-foreground">
-          {caption}
-        </figcaption>
-      </figure>
-
-      <span class="hero-name md:justify-self-start" aria-hidden="true">{lastName}</span>
+    <div class="mt-12 flex items-center justify-between border-t pt-4 text-sm text-muted-foreground md:mt-16">
+      <span>{location}</span>
+      <a href="#about" class="underline-offset-4 transition-colors hover:text-foreground hover:underline">Scroll ↓</a>
     </div>
   </div>
 </section>
 
 <style>
-  .hero-name {
+  .hero-line {
     font-family: var(--font-heading);
     font-weight: 500;
     letter-spacing: -0.035em;
-    line-height: 0.9;
-    font-size: clamp(3.5rem, 18vw, 6.5rem);
+    line-height: 1.08;
+    font-size: clamp(2.5rem, 7vw, 6.75rem);
+    text-wrap: pretty;
   }
 
-  @media (min-width: 768px) {
-    .hero-name {
-      font-size: clamp(3rem, 8vw, 9.5rem);
+  .hero-photo {
+    display: inline-block;
+    height: 0.8em;
+    aspect-ratio: 16 / 10;
+    margin-inline: 0.04em;
+    vertical-align: -0.1em;
+    overflow: hidden;
+    border-radius: 9999px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .hero-photo--round {
+    aspect-ratio: 1;
+  }
+
+  .hero-photo--tall {
+    aspect-ratio: 3 / 4;
+    border-radius: 0.2em;
+  }
+
+  .hero-photo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-photo:hover {
+      transform: rotate(-4deg) scale(1.08);
     }
   }
 </style>
