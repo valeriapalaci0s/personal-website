@@ -7,18 +7,24 @@ Marca cada tarea con `[x]` al terminarla.
 ---
 
 ## Fase 1: Setup
-- [ ] 1.1 Crear el proyecto Astro en la raíz del repo (template minimal, TypeScript `strict`)
-- [ ] 1.2 Agregar `.gitignore` (node_modules, dist, .astro, .env)
-- [ ] 1.3 Instalar e integrar `@astrojs/react`
-- [ ] 1.4 Instalar y configurar Tailwind CSS (`src/styles/global.css`)
-- [ ] 1.5 Configurar el alias `@/*` en `tsconfig.json` (requerido por shadcn)
-- [ ] 1.6 Ejecutar `npx shadcn@latest init` (genera `components.json` y `src/lib/utils.ts`)
-- [ ] 1.7 Agregar los componentes shadcn: `button`, `card`, `accordion`, `navigation-menu`, `sheet`, `separator`, `badge`, `avatar`, `tooltip`, `sonner`
-- [ ] 1.8 Instalar las fuentes con `@fontsource` (display serif y sans) y registrarlas en el tema
-- [ ] 1.9 Definir los tokens del tema editorial en las variables CSS de shadcn (colores, radio, fuentes)
-- [ ] 1.10 Crear `src/layouts/BaseLayout.astro` (`<head>`, fuentes, estilos globales, slot)
-- [ ] 1.11 Verificar que `npm run dev`, `npx astro check` y `npm run build` pasen sin errores
-- [ ] 1.12 Commit: "Set up Astro + TS + Tailwind + shadcn"
+- [x] 1.1 Crear el proyecto Astro en la raíz del repo (template minimal, TypeScript `strict`)
+- [x] 1.2 Agregar `.gitignore` (node_modules, dist, .astro, .env)
+- [x] 1.3 Instalar e integrar `@astrojs/react`
+- [x] 1.4 Instalar y configurar Tailwind CSS (`src/styles/global.css`)
+- [x] 1.5 Configurar el alias `@/*` en `tsconfig.json` (requerido por shadcn)
+- [x] 1.6 Ejecutar `npx shadcn@latest init` (genera `components.json` y `src/lib/utils.ts`)
+- [x] 1.7 Agregar los componentes shadcn: `button`, `card`, `accordion`, `navigation-menu`, `sheet`, `separator`, `badge`, `avatar`, `tooltip`, `sonner`
+- [x] 1.8 Instalar las fuentes con `@fontsource` (display serif y sans) y registrarlas en el tema
+- [x] 1.9 Definir los tokens del tema editorial en las variables CSS de shadcn (colores, radio, fuentes)
+- [x] 1.10 Crear `src/layouts/BaseLayout.astro` (`<head>`, fuentes, estilos globales, slot)
+- [x] 1.11 Verificar que `npm run dev`, `npx astro check` y `npm run build` pasen sin errores
+- [x] 1.12 Commit: "Set up Astro + TS + Tailwind + shadcn"
+
+> **Notas de la fase 1**
+> - Astro 7.3, Tailwind v4, shadcn preset `radix-nova`. Geist viene del preset e Instrument Serif (normal + itálica) de `@fontsource`.
+> - Tokens nuevos: `--brand` (acento terracota) → clases `text-brand` / `bg-brand`; títulos con `font-heading`.
+> - `npm run build` ahora corre `astro check` antes del build.
+> - Para la fase 2: `tooltip` necesita envolverse en `TooltipProvider` dentro de cada island, y `<Toaster />` de sonner lleva `theme="light"` (el sitio no tiene dark mode).
 
 ## Fase 2: Layout del home (con placeholders)
 ### Global
