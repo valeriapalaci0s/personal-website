@@ -35,7 +35,7 @@ Marca cada tarea con `[x]` al terminarla.
 - [x] 2.5 `Footer.astro`: © año, redes y "Back to top"
 ### Secciones
 - [x] 2.6 `Hero.astro`: "VALERIA" y "PALACIOS" gigantes con una foto polaroid al centro y una línea "ciudad, año" (layout apilado en móvil)
-- [x] 2.7 `About.astro`: bio centrada con acento en itálica y foto secundaria opcional
+- [x] 2.7 `About.astro`: bio centrada con palabra de acento y foto secundaria opcional (sin título grande, solo la etiqueta)
 - [x] 2.8 `src/data/experience.ts`: tipo `Experience` con 3-4 entradas placeholder
 - [x] 2.9 `ExperienceAccordion.tsx`: `accordion` de shadcn con rol, empresa, fechas y detalle
 - [x] 2.10 `Writing.astro`: texto corto y botón "Read on Substack ↗" (abre en otra pestaña)
@@ -51,6 +51,7 @@ Marca cada tarea con `[x]` al terminarla.
 > - Las islas cargan así: `MobileNav` con `client:media` (solo en pantallas < 768px), y `ExperienceAccordion` y `CopyEmail` con `client:visible`.
 > - En archivos `.astro`, los links con estilo de botón usan `cn(buttonVariants(...), extra)`. `buttonVariants` solo no combina clases que chocan (por ejemplo `border-transparent` y `border-border`).
 > - Las imágenes placeholder (`src/assets/placeholders/`) se generaron localmente con `sharp`.
+> - Tipografía cambiada a **Bricolage Grotesque + Geist** (antes Instrument Serif), por decisión de Valeria tras comparar 4 opciones. El nombre del hero va en mayúsculas y minúsculas.
 > - Verificado en 1280, 768 y 375px: nav con anchors, menú móvil (se cierra al navegar), acordeón, copiar email con toast y links externos con `rel="noopener noreferrer"`.
 
 ## Fase 3: Proyectos

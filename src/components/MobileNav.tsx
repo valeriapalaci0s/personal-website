@@ -25,7 +25,7 @@ export default function MobileNav({ items }: Props) {
       </SheetTrigger>
       <SheetContent side="right" className="w-full bg-background sm:max-w-xs">
         <SheetHeader>
-          <SheetTitle className="font-heading text-2xl font-normal">Valeria Palacios</SheetTitle>
+          <SheetTitle className="font-heading text-xl font-medium tracking-tight">Valeria Palacios</SheetTitle>
           <SheetDescription className="sr-only">Site navigation</SheetDescription>
         </SheetHeader>
         <nav aria-label="Main" className="flex flex-col px-4">
@@ -33,7 +33,7 @@ export default function MobileNav({ items }: Props) {
             <SheetClose asChild key={item.label}>
               <a
                 href={item.href}
-                className="flex items-center gap-1 border-b py-4 font-heading text-3xl"
+                className="flex items-center gap-1 border-b py-4 font-heading text-3xl font-medium tracking-tight"
                 {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
               >
                 {item.label}

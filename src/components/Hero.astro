@@ -26,7 +26,7 @@ const caption = 'City, 2026'; // placeholder — Phase 5
           fetchpriority="high"
           class="aspect-4/5 w-full object-cover"
         />
-        <figcaption class="pt-3 text-center font-heading text-lg text-muted-foreground italic">
+        <figcaption class="pt-3 text-center text-sm text-muted-foreground">
           {caption}
         </figcaption>
       </figure>
@@ -39,14 +39,15 @@ const caption = 'City, 2026'; // placeholder — Phase 5
 <style>
   .hero-name {
     font-family: var(--font-heading);
-    line-height: 0.85;
-    text-transform: uppercase;
-    font-size: clamp(3.5rem, 19vw, 7rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.9;
+    font-size: clamp(3.5rem, 18vw, 6.5rem);
   }
 
   @media (min-width: 768px) {
     .hero-name {
-      font-size: clamp(4rem, 8.5vw, 10rem);
+      font-size: clamp(3rem, 8vw, 9.5rem);
     }
   }
 </style>

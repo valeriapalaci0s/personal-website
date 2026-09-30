@@ -14,7 +14,7 @@ const { photo = aboutPhoto } = Astro.props;
 
 <section id="about" aria-labelledby="about-title" class="scroll-mt-16 border-t">
   <div class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6 md:py-32">
-    <SectionHeader eyebrow="About" title="Hi, I'm Valeria." id="about-title" align="center" />
+    <SectionHeader eyebrow="About" id="about-title" align="center" />
 
     {
       photo && (
@@ -34,7 +34,7 @@ const { photo = aboutPhoto } = Astro.props;
     <p class="text-xl leading-relaxed text-pretty md:text-2xl">
       A short bio goes here: what you do, where you're based and what you care about. Two or three
       sentences that sound like you, with one word that carries the <em
-        class="font-heading text-[1.2em] text-brand">accent</em
+        class="font-heading font-semibold text-brand not-italic">accent</em
       >.
     </p>
   </div>

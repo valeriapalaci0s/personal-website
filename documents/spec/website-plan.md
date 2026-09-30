@@ -23,7 +23,7 @@ Decisiones de Valeria:
   - Solo cambiamos el tema de shadcn (variables CSS de color, radio y fuente) para darle el toque editorial; no hacemos componentes a mano.
   - Los componentes interactivos (Accordion, Sheet, copiar email) se cargan como islands con `client:visible` / `client:load`; el resto se queda en HTML estático.
 - **Contenido:** Astro Content Collections, con un archivo `.md` por proyecto en `src/content/projects/`. Experiencia y links en `src/data/*.ts`.
-- **Tipografía:** un display grande (tipo *Instrument Serif* o *PP Editorial*) para el nombre y los títulos, más una sans limpia (*Inter* o *Geist*) para el texto. Todo self-hosted con `@fontsource`.
+- **Tipografía:** *Bricolage Grotesque* (variable, peso 500 y tracking cerrado) como display para el nombre y los títulos: moderna, juguetona y elegante. *Geist* para el texto. Todo self-hosted con `@fontsource`. Bricolage no tiene itálica, así que las palabras de acento van en semibold color `brand`.
 - **Imágenes:** componente `<Image>` de Astro, que optimiza y genera tamaños automáticamente. Fotos en `src/assets/`.
 - **Backend:** ninguno. Si más adelante hace falta un formulario, se puede agregar una función serverless sin cambiar el stack.
 - **Deploy (paso final):** Vercel o Netlify gratis, conectado a GitHub, más un dominio propio (ej. `valeriapalacios.com`).
@@ -35,8 +35,8 @@ Decisiones de Valeria:
 - **Footer mínimo:** © año, links de redes y "Back to top".
 
 ### Home (`/`), una sola página con scroll
-1. **Hero editorial:** "VALERIA" y "PALACIOS" en tipografía gigante, a los lados de una foto vertical tipo polaroid, con una línea pequeña debajo (ej. "ciudad, 2026"). En móvil el nombre se apila arriba y abajo de la foto.
-2. **About:** párrafo de bio centrado en tipografía mediana, con alguna palabra en itálica como acento (como el "sidequests" de Joelle) y una segunda foto opcional.
+1. **Hero editorial:** "Valeria" y "Palacios" en tipografía gigante, a los lados de una foto vertical tipo polaroid, con una línea pequeña debajo (ej. "ciudad, 2026"). En móvil el nombre se apila arriba y abajo de la foto.
+2. **About:** párrafo de bio centrado en tipografía mediana, con alguna palabra de acento en color `brand` (como el "sidequests" de Joelle) y una segunda foto opcional. Sin título grande: solo la etiqueta "About". El resto de las secciones mantiene etiqueta + título.
 3. **Experience:** `Accordion` de shadcn estilo Nicolas (rol, empresa y fechas; al abrir se ve el detalle).
 4. **Projects:** grid de 2 columnas (1 en móvil) con imagen grande, título, descripción de una línea y "Learn more →", que lleva a `/projects/[slug]`.
 5. **Writing:** bloque corto ("Escribo en Substack sobre…") con botón "Read on Substack ↗".
