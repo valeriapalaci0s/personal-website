@@ -51,9 +51,27 @@ Marca cada tarea con `[x]` al terminarla.
 > - Las islas cargan así: `MobileNav` con `client:media` (solo en pantallas < 768px), y `ExperienceAccordion` y `CopyEmail` con `client:visible`.
 > - En archivos `.astro`, los links con estilo de botón usan `cn(buttonVariants(...), extra)`. `buttonVariants` solo no combina clases que chocan (por ejemplo `border-transparent` y `border-border`).
 > - Las imágenes placeholder (`src/assets/placeholders/`) se generaron localmente con `sharp`.
-> - Hero rediseñado: de nombre partido alrededor de una polaroid (demasiado parecido a Joelle) a una frase con fotos inline. Placeholder extra: `detail-photo.jpg`.
-> - Tipografía cambiada a **Bricolage Grotesque + Geist** (antes Instrument Serif), por decisión de Valeria tras comparar 4 opciones. El nombre del hero va en mayúsculas y minúsculas.
+> - *(Superado por la fase 2b.)* Hero rediseñado: de nombre partido alrededor de una polaroid (demasiado parecido a Joelle) a una frase con fotos inline. Placeholder extra: `detail-photo.jpg`.
+> - *(Superado por la fase 2b.)* Tipografía cambiada a **Bricolage Grotesque + Geist** (antes Instrument Serif), por decisión de Valeria tras comparar 4 opciones. El nombre del hero va en mayúsculas y minúsculas.
 > - Verificado en 1280, 768 y 375px: nav con anchors, menú móvil (se cierra al navegar), acordeón, copiar email con toast y links externos con `rel="noopener noreferrer"`.
+
+## Fase 2b: Rediseño estilo Sonora
+Nueva dirección visual (ver spec: Estilo, Tipografía, Layout y Detalles visuales). Reemplaza el look editorial claro de la fase 2; se mantienen la estructura, los datos (`links.ts`, `experience.ts`) y las islas.
+- [ ] 2b.1 Tipografía: instalar `@fontsource-variable/inter`, quitar Bricolage y Geist, y definir `--font-sans` y `--font-heading` como Inter
+- [ ] 2b.2 Tema oscuro en `global.css`: fondo casi negro, texto blanco, secundario gris, bordes `white/10` y `--primary` blanco (botones blancos con texto negro). Quitar `--brand`
+- [ ] 2b.3 Radio de botones en píldora (`rounded-full`) vía tema o clases; imágenes con radio pequeño
+- [ ] 2b.4 Placeholder de montañas: generar localmente `src/assets/placeholders/mountains.jpg` (horizontal, ≥ 2400px) y quitar los placeholders que ya no se usan
+- [ ] 2b.5 `Hero.astro`: foto de montañas a sangre completa (`100svh`, `<Image>` con `loading="eager"`), degradado oscuro, "VALERIA / PALACIOS" en Inter 900 mayúsculas y la fila inferior (rol · ciudad, año · píldora CONTACT)
+- [ ] 2b.6 `Nav.astro`, `DesktopNav.tsx`: "VALERIA PALACIOS" a la izquierda, links en mayúsculas pequeñas y píldora CONTACT. Transparente sobre el hero y con fondo oscuro con blur al hacer scroll (script TS mínimo)
+- [ ] 2b.7 `MobileNav.tsx`: sheet oscuro a pantalla completa con links en display grande
+- [ ] 2b.8 `SectionHeader.astro`: etiqueta pequeña y título en display 900 mayúsculas
+- [ ] 2b.9 `About.astro`: solo etiqueta y bio grande en blanco, alineada a la izquierda, sin polaroid
+- [ ] 2b.10 `Experience` / `ExperienceAccordion.tsx`: estilo oscuro con divisores `white/10`
+- [ ] 2b.11 `Writing.astro`: píldora blanca "READ ON SUBSTACK ↗"
+- [ ] 2b.12 `Contact.astro` / `CopyEmail.tsx`: "LET'S TALK" gigante, píldora blanca con el email y píldoras con borde para las redes; `<Toaster theme="dark">`
+- [ ] 2b.13 `Footer.astro` y la sección temporal `#projects` en el estilo oscuro
+- [ ] 2b.14 Verificar en 1280, 768 y 375px (legibilidad sobre la foto, contraste, sin scroll horizontal), con `astro check` y `build` sin errores
+- [ ] 2b.15 Commit: "Redesign in Sonora style"
 
 ## Fase 3: Proyectos
 - [ ] 3.1 `src/content.config.ts`: colección `projects` con schema Zod (title, description, cover, role, year, tools, link, order)
