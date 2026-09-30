@@ -1,23 +1,22 @@
 ---
 interface Props {
-  /** Small uppercase label; becomes the section heading when there is no title. */
+  /** Small bold uppercase label; becomes the section heading when there is no title. */
   eyebrow: string;
-  /** Optional large title under the label. */
+  /** Optional large display title under the label. */
   title?: string;
   id?: string;
-  align?: 'left' | 'center';
 }
 
-const { eyebrow, title, id, align = 'left' } = Astro.props;
-const eyebrowClass = 'text-xs tracking-[0.2em] text-muted-foreground uppercase';
+const { eyebrow, title, id } = Astro.props;
+const eyebrowClass = 'text-xs font-bold tracking-wide text-muted-foreground uppercase';
 ---
 
-<div class:list={['mb-10 md:mb-14', align === 'center' && 'text-center']}>
+<div class="mb-10 md:mb-16">
   {
     title ? (
       <>
-        <p class:list={[eyebrowClass, 'mb-3']}>{eyebrow}</p>
-        <h2 id={id} class="font-heading text-5xl leading-none font-medium tracking-[-0.03em] md:text-6xl">
+        <p class:list={[eyebrowClass, 'mb-4']}>{eyebrow}</p>
+        <h2 id={id} class="display text-[clamp(3rem,9vw,8rem)]">
           {title}
         </h2>
       </>

@@ -28,7 +28,7 @@ export default function CopyEmail({ email }: Props) {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button size="lg" className="px-5" onClick={copy} aria-label={`Copy email address ${email}`}>
+          <Button size="lg" className="h-10 rounded-full px-5 text-xs font-bold tracking-wide" onClick={copy} aria-label={`Copy email address ${email}`}>
             <MailIcon aria-hidden="true" />
             {email}
             {copied ? <CheckIcon aria-hidden="true" /> : <CopyIcon aria-hidden="true" />}
@@ -36,8 +36,8 @@ export default function CopyEmail({ email }: Props) {
         </TooltipTrigger>
         <TooltipContent>{copied ? 'Copied!' : 'Click to copy'}</TooltipContent>
       </Tooltip>
-      {/* The site has no dark mode, so the toaster is pinned to light. */}
-      <Toaster theme="light" position="bottom-center" />
+      {/* The site is dark-only, so the toaster is pinned to dark. */}
+      <Toaster theme="dark" position="bottom-center" />
     </TooltipProvider>
   );
 }

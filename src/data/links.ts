@@ -25,6 +25,8 @@ export interface NavItem {
   label: string;
   href: string;
   external?: boolean;
+  /** Rendered as the white pill call-to-action on desktop. */
+  cta?: boolean;
 }
 
 export const navItems: NavItem[] = [
@@ -32,5 +34,5 @@ export const navItems: NavItem[] = [
   { label: 'Experience', href: '/#experience' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Writing', href: links.substack, external: true },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Contact', href: '/#contact', cta: true },
 ];

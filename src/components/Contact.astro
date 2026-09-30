@@ -1,44 +1,31 @@
 ---
 import { ArrowUpRightIcon } from 'lucide-react';
 import CopyEmail from '@/components/CopyEmail';
-import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { links } from '@/data/links';
+import { pill } from '@/lib/styles';
 ---
 
 <section id="contact" aria-labelledby="contact-title" class="scroll-mt-16 border-t">
-  <div class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 md:py-36">
-    <p class="mb-3 text-xs tracking-[0.2em] text-muted-foreground uppercase">Contact</p>
-    <h2 id="contact-title" class="mb-6 font-heading text-6xl leading-none font-medium tracking-[-0.035em] md:text-8xl">
-      Let's <em class="text-brand not-italic">talk.</em>
-    </h2>
+  <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 md:py-40">
+    <p class="mb-4 text-xs font-bold tracking-wide text-muted-foreground uppercase">Contact</p>
+    <h2 id="contact-title" class="display mb-8 text-[clamp(4rem,16vw,14rem)]">Let's talk</h2>
 
     <!-- Placeholder copy — Phase 5 -->
-    <p class="mx-auto mb-10 max-w-md text-lg text-muted-foreground text-pretty">
+    <p class="mb-10 max-w-md text-lg text-muted-foreground text-pretty">
       One line inviting people to reach out, and what about.
     </p>
 
-    <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-wrap items-center gap-3">
       <CopyEmail client:visible email={links.email} />
-
-      <ul class="flex flex-wrap justify-center gap-2">
-        {
-          links.social.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'px-4')}
-              >
-                {link.label}
-                <ArrowUpRightIcon aria-hidden="true" />
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      {
+        links.social.map((link) => (
+          <a href={link.href} target="_blank" rel="noopener noreferrer" class={pill('outline')}>
+            {link.label}
+            <ArrowUpRightIcon aria-hidden="true" />
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        ))
+      }
     </div>
   </div>
 </section>
