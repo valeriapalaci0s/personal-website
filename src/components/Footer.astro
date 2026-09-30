@@ -1,0 +1,28 @@
+---
+import { links } from '@/data/links';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t">
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 text-xs font-bold tracking-wide text-muted-foreground uppercase sm:px-6 md:flex-row md:items-center md:justify-between"
+  >
+    <p>© {year} Valeria Palacios</p>
+
+    <ul class="flex flex-wrap gap-x-6 gap-y-2">
+      {
+        links.social.map((link) => (
+          <li>
+            <a href={link.href} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-foreground">
+              {link.label}
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a href="#top" class="transition-colors hover:text-foreground">Back to top ↑</a>
+  </div>
+</footer>

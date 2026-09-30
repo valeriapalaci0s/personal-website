@@ -28,22 +28,58 @@ Marca cada tarea con `[x]` al terminarla.
 
 ## Fase 2: Layout del home (con placeholders)
 ### Global
-- [ ] 2.1 `src/data/links.ts`: email, LinkedIn, X/Instagram y Substack (tipados)
-- [ ] 2.2 `Nav.astro`: iniciales "VP" y los links About · Experience · Projects · Writing ↗ · Contact, usando `navigation-menu`
-- [ ] 2.3 `MobileNav.tsx`: menú móvil con `sheet`
-- [ ] 2.4 Scroll suave a cada sección (anchors `#about`, `#experience`, etc.)
-- [ ] 2.5 `Footer.astro`: © año, redes y "Back to top"
+- [x] 2.1 `src/data/links.ts`: email, LinkedIn, X/Instagram y Substack (tipados)
+- [x] 2.2 `Nav.astro`: iniciales "VP" y los links About · Experience · Projects · Writing ↗ · Contact, usando `navigation-menu`
+- [x] 2.3 `MobileNav.tsx`: menú móvil con `sheet`
+- [x] 2.4 Scroll suave a cada sección (anchors `#about`, `#experience`, etc.)
+- [x] 2.5 `Footer.astro`: © año, redes y "Back to top"
 ### Secciones
-- [ ] 2.6 `Hero.astro`: "VALERIA" y "PALACIOS" gigantes con una foto polaroid al centro y una línea "ciudad, año" (layout apilado en móvil)
-- [ ] 2.7 `About.astro`: bio centrada con acento en itálica y foto secundaria opcional
-- [ ] 2.8 `src/data/experience.ts`: tipo `Experience` con 3-4 entradas placeholder
-- [ ] 2.9 `ExperienceAccordion.tsx`: `accordion` de shadcn con rol, empresa, fechas y detalle
-- [ ] 2.10 `Writing.astro`: texto corto y botón "Read on Substack ↗" (abre en otra pestaña)
-- [ ] 2.11 `Contact.astro`: frase grande y botones de LinkedIn y X/Instagram
-- [ ] 2.12 `CopyEmail.tsx`: botón que copia el email y muestra un toast con `sonner`
-- [ ] 2.13 `src/pages/index.astro`: componer todas las secciones en orden
-- [ ] 2.14 Agregar imágenes placeholder en `src/assets/`
-- [ ] 2.15 Commit: "Home layout with placeholders"
+- [x] 2.6 `Hero.astro`: frase grande con nombre + intro y fotos inline (retrato circular, píldora, vertical), con "ciudad, año" y "Scroll ↓" debajo
+- [x] 2.7 `About.astro`: bio centrada con palabra de acento y foto secundaria opcional (sin título grande, solo la etiqueta)
+- [x] 2.8 `src/data/experience.ts`: tipo `Experience` con 3-4 entradas placeholder
+- [x] 2.9 `ExperienceAccordion.tsx`: `accordion` de shadcn con rol, empresa, fechas y detalle
+- [x] 2.10 `Writing.astro`: texto corto y botón "Read on Substack ↗" (abre en otra pestaña)
+- [x] 2.11 `Contact.astro`: frase grande y botones de LinkedIn y X/Instagram
+- [x] 2.12 `CopyEmail.tsx`: botón que copia el email y muestra un toast con `sonner`
+- [x] 2.13 `src/pages/index.astro`: componer todas las secciones en orden
+- [x] 2.14 Agregar imágenes placeholder en `src/assets/`
+- [x] 2.15 Commit: "Home layout with placeholders"
+
+> **Notas de la fase 2**
+> - Agregados fuera de la lista original: `DesktopNav.tsx` (el `navigation-menu` de shadcn necesita un componente React que lo envuelva; se renderiza como HTML estático, sin JS) y `SectionHeader.astro` (encabezado compartido por las secciones).
+> - `#projects` es una sección temporal en `index.astro` para que el link del nav funcione. Se reemplaza por `<Projects />` en 3.3–3.4.
+> - Las islas cargan así: `MobileNav` con `client:media` (solo en pantallas < 768px), y `ExperienceAccordion` y `CopyEmail` con `client:visible`.
+> - En archivos `.astro`, los links con estilo de botón usan `cn(buttonVariants(...), extra)`. `buttonVariants` solo no combina clases que chocan (por ejemplo `border-transparent` y `border-border`).
+> - Las imágenes placeholder (`src/assets/placeholders/`) se generaron localmente con `sharp`.
+> - *(Superado por la fase 2b.)* Hero rediseñado: de nombre partido alrededor de una polaroid (demasiado parecido a Joelle) a una frase con fotos inline. Placeholder extra: `detail-photo.jpg`.
+> - *(Superado por la fase 2b.)* Tipografía cambiada a **Bricolage Grotesque + Geist** (antes Instrument Serif), por decisión de Valeria tras comparar 4 opciones. El nombre del hero va en mayúsculas y minúsculas.
+> - Verificado en 1280, 768 y 375px: nav con anchors, menú móvil (se cierra al navegar), acordeón, copiar email con toast y links externos con `rel="noopener noreferrer"`.
+
+## Fase 2b: Rediseño estilo Sonora
+Nueva dirección visual (ver spec: Estilo, Tipografía, Layout y Detalles visuales). Reemplaza el look editorial claro de la fase 2; se mantienen la estructura, los datos (`links.ts`, `experience.ts`) y las islas.
+- [x] 2b.1 Tipografía: instalar `@fontsource-variable/inter`, quitar Bricolage y Geist, y definir `--font-sans` y `--font-heading` como Inter
+- [x] 2b.2 Tema oscuro en `global.css`: fondo casi negro, texto blanco, secundario gris, bordes `white/10` y `--primary` blanco (botones blancos con texto negro). Quitar `--brand`
+- [x] 2b.3 Radio de botones en píldora (`rounded-full`) vía tema o clases; imágenes con radio pequeño
+- [x] 2b.4 Placeholder de montañas: generar localmente `src/assets/placeholders/mountains.jpg` (horizontal, ≥ 2400px) y quitar los placeholders que ya no se usan
+- [x] 2b.5 `Hero.astro`: foto de montañas a sangre completa (`100svh`, `<Image>` con `loading="eager"`), degradado oscuro, "VALERIA / PALACIOS" en Inter 900 mayúsculas y la fila inferior (rol · ciudad, año · píldora CONTACT)
+- [x] 2b.6 `Nav.astro`, `DesktopNav.tsx`: "VALERIA PALACIOS" a la izquierda, links en mayúsculas pequeñas y píldora CONTACT. Transparente sobre el hero y con fondo oscuro con blur al hacer scroll (script TS mínimo)
+- [x] 2b.7 `MobileNav.tsx`: sheet oscuro a pantalla completa con links en display grande
+- [x] 2b.8 `SectionHeader.astro`: etiqueta pequeña y título en display 900 mayúsculas
+- [x] 2b.9 `About.astro`: solo etiqueta y bio grande en blanco, alineada a la izquierda, sin polaroid
+- [x] 2b.10 `Experience` / `ExperienceAccordion.tsx`: estilo oscuro con divisores `white/10`
+- [x] 2b.11 `Writing.astro`: píldora blanca "READ ON SUBSTACK ↗"
+- [x] 2b.12 `Contact.astro` / `CopyEmail.tsx`: "LET'S TALK" gigante, píldora blanca con el email y píldoras con borde para las redes; `<Toaster theme="dark">`
+- [x] 2b.13 `Footer.astro` y la sección temporal `#projects` en el estilo oscuro
+- [x] 2b.14 Verificar en 1280, 768 y 375px (legibilidad sobre la foto, contraste, sin scroll horizontal), con `astro check` y `build` sin errores
+- [x] 2b.15 Commit: "Redesign in Sonora style"
+
+> **Notas de la fase 2b**
+> - `src/lib/styles.ts` → `pill('solid' | 'outline')`: clases de botón en píldora que se reutilizan en Astro y React.
+> - Utilidad `.display` en `global.css`: Inter 900, mayúsculas, tracking `-0.05em`, line-height `0.85`. Se usa en el nombre, los títulos y el menú móvil.
+> - `NavItem.cta`: Contact se muestra como píldora en desktop. En móvil aparece en la lista del sheet.
+> - El degradado del hero oscurece solo arriba (para la navbar) y funde a negro en el último ~55%, con la foto encuadrada en `center 65%`. Se revisa de nuevo con la foto real en la fase 5.
+> - En `astro dev`, la foto del hero puede tardar unos segundos en aparecer la primera vez porque Astro genera cada tamaño a pedido. En el build se generan de antemano.
+> - Verificado en 1280, 768 y 375px: navbar transparente → con fondo al hacer scroll, menú móvil (abre, cierra y navega), acordeón, copiar email con toast oscuro y sin scroll horizontal. En el panel de navegador, los clics con coordenadas no llegan bien en modo móvil emulado, así que el menú se probó con clics programáticos.
 
 ## Fase 3: Proyectos
 - [ ] 3.1 `src/content.config.ts`: colección `projects` con schema Zod (title, description, cover, role, year, tools, link, order)

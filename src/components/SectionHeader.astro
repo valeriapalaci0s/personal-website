@@ -1,0 +1,29 @@
+---
+interface Props {
+  /** Small bold uppercase label; becomes the section heading when there is no title. */
+  eyebrow: string;
+  /** Optional large display title under the label. */
+  title?: string;
+  id?: string;
+}
+
+const { eyebrow, title, id } = Astro.props;
+const eyebrowClass = 'text-xs font-bold tracking-wide text-muted-foreground uppercase';
+---
+
+<div class="mb-10 md:mb-16">
+  {
+    title ? (
+      <>
+        <p class:list={[eyebrowClass, 'mb-4']}>{eyebrow}</p>
+        <h2 id={id} class="display text-[clamp(3rem,9vw,8rem)]">
+          {title}
+        </h2>
+      </>
+    ) : (
+      <h2 id={id} class={eyebrowClass}>
+        {eyebrow}
+      </h2>
+    )
+  }
+</div>
