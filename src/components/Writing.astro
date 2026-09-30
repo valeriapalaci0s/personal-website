@@ -1,0 +1,30 @@
+---
+import { ArrowUpRightIcon } from 'lucide-react';
+import SectionHeader from '@/components/SectionHeader.astro';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { links } from '@/data/links';
+---
+
+<section id="writing" aria-labelledby="writing-title" class="scroll-mt-16 border-t">
+  <div class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6 md:py-32">
+    <SectionHeader eyebrow="Writing" title="Notes & essays." id="writing-title" align="center" />
+
+    <!-- Placeholder copy — Phase 5 -->
+    <p class="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
+      I write on Substack about the topics you care about. One sentence on what readers will find
+      there.
+    </p>
+
+    <a
+      href={links.substack}
+      target="_blank"
+      rel="noopener noreferrer"
+      class={cn(buttonVariants({ size: 'lg' }), 'px-5')}
+    >
+      Read on Substack
+      <ArrowUpRightIcon aria-hidden="true" />
+      <span class="sr-only">(opens in a new tab)</span>
+    </a>
+  </div>
+</section>

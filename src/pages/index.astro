@@ -1,14 +1,26 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Button } from '@/components/ui/button';
+import Hero from '@/components/Hero.astro';
+import About from '@/components/About.astro';
+import Experience from '@/components/Experience.astro';
+import SectionHeader from '@/components/SectionHeader.astro';
+import Writing from '@/components/Writing.astro';
+import Contact from '@/components/Contact.astro';
 ---
 
 <BaseLayout>
-  <main class="mx-auto flex min-h-dvh max-w-3xl flex-col items-center justify-center gap-6 px-4 text-center">
-    <h1 class="font-heading text-6xl uppercase sm:text-8xl">Valeria Palacios</h1>
-    <p class="text-muted-foreground">
-      Setup check: <em class="font-heading text-2xl text-brand">editorial</em> theme, Geist and shadcn/ui.
-    </p>
-    <Button>shadcn Button</Button>
-  </main>
+  <Hero />
+  <About />
+  <Experience />
+
+  <!-- Temporary anchor target: replaced by <Projects /> in Phase 3 (tasks 3.3–3.4) -->
+  <section id="projects" aria-labelledby="projects-title" class="scroll-mt-16 border-t">
+    <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
+      <SectionHeader eyebrow="Projects" title="Selected work." id="projects-title" />
+      <p class="text-muted-foreground">The project grid arrives in Phase 3.</p>
+    </div>
+  </section>
+
+  <Writing />
+  <Contact />
 </BaseLayout>

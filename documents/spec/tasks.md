@@ -28,22 +28,30 @@ Marca cada tarea con `[x]` al terminarla.
 
 ## Fase 2: Layout del home (con placeholders)
 ### Global
-- [ ] 2.1 `src/data/links.ts`: email, LinkedIn, X/Instagram y Substack (tipados)
-- [ ] 2.2 `Nav.astro`: iniciales "VP" y los links About · Experience · Projects · Writing ↗ · Contact, usando `navigation-menu`
-- [ ] 2.3 `MobileNav.tsx`: menú móvil con `sheet`
-- [ ] 2.4 Scroll suave a cada sección (anchors `#about`, `#experience`, etc.)
-- [ ] 2.5 `Footer.astro`: © año, redes y "Back to top"
+- [x] 2.1 `src/data/links.ts`: email, LinkedIn, X/Instagram y Substack (tipados)
+- [x] 2.2 `Nav.astro`: iniciales "VP" y los links About · Experience · Projects · Writing ↗ · Contact, usando `navigation-menu`
+- [x] 2.3 `MobileNav.tsx`: menú móvil con `sheet`
+- [x] 2.4 Scroll suave a cada sección (anchors `#about`, `#experience`, etc.)
+- [x] 2.5 `Footer.astro`: © año, redes y "Back to top"
 ### Secciones
-- [ ] 2.6 `Hero.astro`: "VALERIA" y "PALACIOS" gigantes con una foto polaroid al centro y una línea "ciudad, año" (layout apilado en móvil)
-- [ ] 2.7 `About.astro`: bio centrada con acento en itálica y foto secundaria opcional
-- [ ] 2.8 `src/data/experience.ts`: tipo `Experience` con 3-4 entradas placeholder
-- [ ] 2.9 `ExperienceAccordion.tsx`: `accordion` de shadcn con rol, empresa, fechas y detalle
-- [ ] 2.10 `Writing.astro`: texto corto y botón "Read on Substack ↗" (abre en otra pestaña)
-- [ ] 2.11 `Contact.astro`: frase grande y botones de LinkedIn y X/Instagram
-- [ ] 2.12 `CopyEmail.tsx`: botón que copia el email y muestra un toast con `sonner`
-- [ ] 2.13 `src/pages/index.astro`: componer todas las secciones en orden
-- [ ] 2.14 Agregar imágenes placeholder en `src/assets/`
-- [ ] 2.15 Commit: "Home layout with placeholders"
+- [x] 2.6 `Hero.astro`: "VALERIA" y "PALACIOS" gigantes con una foto polaroid al centro y una línea "ciudad, año" (layout apilado en móvil)
+- [x] 2.7 `About.astro`: bio centrada con acento en itálica y foto secundaria opcional
+- [x] 2.8 `src/data/experience.ts`: tipo `Experience` con 3-4 entradas placeholder
+- [x] 2.9 `ExperienceAccordion.tsx`: `accordion` de shadcn con rol, empresa, fechas y detalle
+- [x] 2.10 `Writing.astro`: texto corto y botón "Read on Substack ↗" (abre en otra pestaña)
+- [x] 2.11 `Contact.astro`: frase grande y botones de LinkedIn y X/Instagram
+- [x] 2.12 `CopyEmail.tsx`: botón que copia el email y muestra un toast con `sonner`
+- [x] 2.13 `src/pages/index.astro`: componer todas las secciones en orden
+- [x] 2.14 Agregar imágenes placeholder en `src/assets/`
+- [x] 2.15 Commit: "Home layout with placeholders"
+
+> **Notas de la fase 2**
+> - Agregados fuera de la lista original: `DesktopNav.tsx` (el `navigation-menu` de shadcn necesita un componente React que lo envuelva; se renderiza como HTML estático, sin JS) y `SectionHeader.astro` (encabezado compartido por las secciones).
+> - `#projects` es una sección temporal en `index.astro` para que el link del nav funcione. Se reemplaza por `<Projects />` en 3.3–3.4.
+> - Las islas cargan así: `MobileNav` con `client:media` (solo en pantallas < 768px), y `ExperienceAccordion` y `CopyEmail` con `client:visible`.
+> - En archivos `.astro`, los links con estilo de botón usan `cn(buttonVariants(...), extra)`. `buttonVariants` solo no combina clases que chocan (por ejemplo `border-transparent` y `border-border`).
+> - Las imágenes placeholder (`src/assets/placeholders/`) se generaron localmente con `sharp`.
+> - Verificado en 1280, 768 y 375px: nav con anchors, menú móvil (se cierra al navegar), acordeón, copiar email con toast y links externos con `rel="noopener noreferrer"`.
 
 ## Fase 3: Proyectos
 - [ ] 3.1 `src/content.config.ts`: colección `projects` con schema Zod (title, description, cover, role, year, tools, link, order)

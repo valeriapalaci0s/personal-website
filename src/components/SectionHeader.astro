@@ -1,0 +1,16 @@
+---
+interface Props {
+  /** Small uppercase label above the title. */
+  eyebrow: string;
+  title: string;
+  id?: string;
+  align?: 'left' | 'center';
+}
+
+const { eyebrow, title, id, align = 'left' } = Astro.props;
+---
+
+<div class:list={['mb-10 md:mb-14', align === 'center' && 'text-center']}>
+  <p class="mb-3 text-xs tracking-[0.2em] text-muted-foreground uppercase">{eyebrow}</p>
+  <h2 id={id} class="font-heading text-5xl leading-none md:text-6xl">{title}</h2>
+</div>

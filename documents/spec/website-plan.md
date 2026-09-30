@@ -57,7 +57,8 @@ src/
   layouts/BaseLayout.astro        # <head>, fuentes, Nav, Footer
   components/
     ui/                           # componentes shadcn generados por el CLI
-    Nav.astro  MobileNav.tsx  Footer.astro
+    Nav.astro  DesktopNav.tsx  MobileNav.tsx  Footer.astro
+    SectionHeader.astro           # eyebrow + título compartido por las secciones
     ExperienceAccordion.tsx  CopyEmail.tsx
     Hero.astro  About.astro  Experience.astro
     ProjectCard.astro  Projects.astro
