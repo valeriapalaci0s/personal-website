@@ -82,14 +82,22 @@ Nueva dirección visual (ver spec: Estilo, Tipografía, Layout y Detalles visual
 > - Verificado en 1280, 768 y 375px: navbar transparente → con fondo al hacer scroll, menú móvil (abre, cierra y navega), acordeón, copiar email con toast oscuro y sin scroll horizontal. En el panel de navegador, los clics con coordenadas no llegan bien en modo móvil emulado, así que el menú se probó con clics programáticos.
 
 ## Fase 3: Proyectos
-- [ ] 3.1 `src/content.config.ts`: colección `projects` con schema Zod (title, description, cover, role, year, tools, link, order)
-- [ ] 3.2 Crear 2-3 proyectos placeholder en `src/content/projects/*.md`
-- [ ] 3.3 `ProjectCard.astro`: `card` con imagen grande, título, una línea de descripción y "Learn more →"
-- [ ] 3.4 `Projects.astro`: grid de 2 columnas (1 en móvil) ordenado por `order`
-- [ ] 3.5 `src/pages/projects/[slug].astro`: imagen hero, título, metadata con `badge` y cuerpo en Markdown
-- [ ] 3.6 Navegación al proyecto anterior/siguiente y link de vuelta a Projects
-- [ ] 3.7 `src/pages/404.astro`
-- [ ] 3.8 Commit: "Project collection and detail pages"
+- [x] 3.1 `src/content.config.ts`: colección `projects` con schema Zod (title, description, cover, role, year, tools, link, order)
+- [x] 3.2 Crear 2-3 proyectos placeholder en `src/content/projects/*.md`
+- [x] 3.3 `ProjectCard.astro`: `card` con imagen grande, título, una línea de descripción y "Learn more →"
+- [x] 3.4 `Projects.astro`: grid de 2 columnas (1 en móvil) ordenado por `order`
+- [x] 3.5 `src/pages/projects/[slug].astro`: imagen hero, título, metadata con `badge` y cuerpo en Markdown
+- [x] 3.6 Navegación al proyecto anterior/siguiente y link de vuelta a Projects
+- [x] 3.7 `src/pages/404.astro`
+- [x] 3.8 Commit: "Project collection and detail pages"
+
+> **Notas de la fase 3**
+> - Schema en `src/content.config.ts` (Astro 7: `z` desde `astro/zod`, loader `glob`). Además de lo planeado, agregué `coverAlt` (texto alternativo obligatorio de la portada). `link` es opcional.
+> - `src/lib/projects.ts` → `getProjects()`: devuelve los proyectos ordenados por `order`. Lo usan el grid y la navegación anterior/siguiente.
+> - En el detalle, si no hay proyecto anterior o siguiente, esa tarjeta lleva a "All projects". El cuerpo en Markdown se estiliza con reglas propias en la página (sin plugin de tipografía).
+> - Portadas placeholder generadas localmente en `src/assets/placeholders/projects/`.
+> - Si se agrega `content.config.ts` con el dev server corriendo, hay que reiniciarlo para que las rutas de proyectos existan.
+> - Verificado: build con 5 páginas (home, 3 proyectos y 404), cards enlazadas al slug correcto, anterior/siguiente en los tres casos, y 1 columna sin scroll horizontal en 375px.
 
 ## Fase 4: Pulido
 - [ ] 4.1 Revisar el responsive a 375px, 768px y 1280px

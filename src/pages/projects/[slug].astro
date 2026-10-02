@@ -1,0 +1,170 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import { ArrowUpRightIcon } from 'lucide-react';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Badge } from '@/components/ui/badge';
+import { getProjects, type Project } from '@/lib/projects';
+import { pill } from '@/lib/styles';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project, index) => ({
+    params: { slug: project.id },
+    props: {
+      project,
+      prev: projects[index - 1] ?? null,
+      next: projects[index + 1] ?? null,
+    },
+  }));
+}
+
+interface Props {
+  project: Project;
+  prev: Project | null;
+  next: Project | null;
+}
+
+const { project, prev, next } = Astro.props;
+const { title, description, cover, coverAlt, role, year, tools, link } = project.data;
+const { Content } = await render(project);
+---
+
+<BaseLayout title={`${title} · Valeria Palacios`} description={description}>
+  <article class="mx-auto max-w-7xl px-4 pt-28 pb-24 sm:px-6 md:pt-36">
+    <a
+      href="/#projects"
+      class="text-xs font-bold tracking-wide text-muted-foreground uppercase transition-colors hover:text-foreground"
+    >
+      ← All projects
+    </a>
+
+    <header class="mt-10 mb-12 md:mb-16">
+      <p class="mb-4 text-xs font-bold tracking-wide text-muted-foreground uppercase">Project</p>
+      <h1 class="display text-[clamp(3rem,10vw,9rem)]">{title}</h1>
+      <p class="mt-6 max-w-2xl text-lg text-muted-foreground text-pretty md:text-xl">{description}</p>
+    </header>
+
+    <div class="overflow-hidden rounded-lg">
+      <Image
+        src={cover}
+        alt={coverAlt}
+        widths={[640, 1024, 1600, 2400]}
+        sizes="(min-width: 1280px) 1232px, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-16/10 w-full object-cover"
+      />
+    </div>
+
+    <div class="mt-12 grid gap-12 md:mt-16 md:grid-cols-[16rem_1fr] md:gap-16">
+      <dl class="grid content-start gap-6 text-sm">
+        <div>
+          <dt class="mb-1 text-xs font-bold tracking-wide text-muted-foreground uppercase">Role</dt>
+          <dd>{role}</dd>
+        </div>
+        <div>
+          <dt class="mb-1 text-xs font-bold tracking-wide text-muted-foreground uppercase">Year</dt>
+          <dd class="tabular-nums">{year}</dd>
+        </div>
+        {
+          tools.length > 0 && (
+            <div>
+              <dt class="mb-2 text-xs font-bold tracking-wide text-muted-foreground uppercase">Tools</dt>
+              <dd class="flex flex-wrap gap-2">
+                {tools.map((tool) => (
+                  <Badge variant="outline" className="rounded-full border-white/20 px-3 font-medium">
+                    {tool}
+                  </Badge>
+                ))}
+              </dd>
+            </div>
+          )
+        }
+        {
+          link && (
+            <div>
+              <a href={link} target="_blank" rel="noopener noreferrer" class={pill('outline')}>
+                Visit project
+                <ArrowUpRightIcon aria-hidden="true" />
+                <span class="sr-only">(opens in a new tab)</span>
+              </a>
+            </div>
+          )
+        }
+      </dl>
+
+      <div class="project-body max-w-3xl">
+        <Content />
+      </div>
+    </div>
+
+    <nav aria-label="More projects" class="mt-24 grid gap-px overflow-hidden rounded-lg border md:mt-32 md:grid-cols-2">
+      {
+        prev ? (
+          <a href={`/projects/${prev.id}`} class="group bg-background p-6 transition-colors hover:bg-card md:p-8">
+            <span class="text-xs font-bold tracking-wide text-muted-foreground uppercase">← Previous</span>
+            <span class="display mt-3 block text-4xl md:text-5xl">{prev.data.title}</span>
+          </a>
+        ) : (
+          <a href="/#projects" class="group bg-background p-6 transition-colors hover:bg-card md:p-8">
+            <span class="text-xs font-bold tracking-wide text-muted-foreground uppercase">← Back</span>
+            <span class="display mt-3 block text-4xl md:text-5xl">All projects</span>
+          </a>
+        )
+      }
+      {
+        next ? (
+          <a href={`/projects/${next.id}`} class="group border-t bg-background p-6 text-right transition-colors hover:bg-card md:border-t-0 md:border-l md:p-8">
+            <span class="text-xs font-bold tracking-wide text-muted-foreground uppercase">Next →</span>
+            <span class="display mt-3 block text-4xl md:text-5xl">{next.data.title}</span>
+          </a>
+        ) : (
+          <a href="/#projects" class="group border-t bg-background p-6 text-right transition-colors hover:bg-card md:border-t-0 md:border-l md:p-8">
+            <span class="text-xs font-bold tracking-wide text-muted-foreground uppercase">Back →</span>
+            <span class="display mt-3 block text-4xl md:text-5xl">All projects</span>
+          </a>
+        )
+      }
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Markdown body: no typography plugin, just a few dark-theme rules */
+  .project-body :global(h2) {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+  }
+  .project-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .project-body :global(p),
+  .project-body :global(li) {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--muted-foreground);
+  }
+  .project-body :global(p + p) {
+    margin-top: 1rem;
+  }
+  .project-body :global(ul) {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .project-body :global(li + li) {
+    margin-top: 0.5rem;
+  }
+  .project-body :global(a) {
+    color: var(--foreground);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .project-body :global(img) {
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+  }
+</style>

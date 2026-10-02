@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
 import About from '@/components/About.astro';
 import Experience from '@/components/Experience.astro';
-import SectionHeader from '@/components/SectionHeader.astro';
+import Projects from '@/components/Projects.astro';
 import Writing from '@/components/Writing.astro';
 import Contact from '@/components/Contact.astro';
 ---
@@ -13,13 +13,7 @@ import Contact from '@/components/Contact.astro';
   <About />
   <Experience />
 
-  <!-- Temporary anchor target: replaced by <Projects /> in Phase 3 (tasks 3.3–3.4) -->
-  <section id="projects" aria-labelledby="projects-title" class="scroll-mt-16 border-t">
-    <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 md:py-36">
-      <SectionHeader eyebrow="Projects" title="Projects" id="projects-title" />
-      <p class="text-muted-foreground">The project grid arrives in Phase 3.</p>
-    </div>
-  </section>
+  <Projects />
 
   <Writing />
   <Contact />
