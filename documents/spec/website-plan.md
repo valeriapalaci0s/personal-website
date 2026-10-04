@@ -27,7 +27,7 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
   - About me: los dos párrafos cortos de `copy.md`.
   - Skills: las 4 líneas por categoría de `copy.md`.
   - Experience: las 4 líneas mínimas de `copy.md` (empresa · rol o años · descripción), sin agregar nada.
-  - Contact: solo los links (email, LinkedIn, X, Substack, GitHub), sin texto.
+  - Contact: solo los links (LinkedIn, X, Substack, GitHub), sin texto ni email.
 - **Tipografía:** *Figtree* (alternativa gratuita a Avenir), self-hosted. Light (300) para el texto y Heavy (800) para el nombre. Tamaños chicos, como Nicolas.
 - **Color:** crema cálido. Fondo `#F5F2EC`, texto `#2E2C27`, texto secundario el mismo tono a ~70%, líneas finas al ~20%. Sin color de acento. Solo modo claro.
 - **Movimiento:** solo la animación de abrir y cerrar del acordeón y el hover en links. Todo respeta `prefers-reduced-motion`.
@@ -68,7 +68,6 @@ public/
 ## Pendientes
 - **Foto** de Valeria para el encabezado.
 - **CV público:** el PDF actual incluye el **teléfono**. Antes de publicarlo como `resume.pdf`, conviene una versión sin teléfono, o enlazar el CV de otra forma.
-- **Email en Contact:** incluido como link; Valeria puede pedir quitarlo.
 
 ## Verificación
 - `astro check` y `npm run build` sin errores.

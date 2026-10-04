@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProfileHeader from '@/components/ProfileHeader.astro';
 import Sections from '@/components/Sections';
-import { about, experience, profile, skills, socialLinks } from '@/data/profile';
+import { about, experience, skills, socialLinks } from '@/data/profile';
 ---
 
 <BaseLayout>
@@ -13,7 +13,6 @@ import { about, experience, profile, skills, socialLinks } from '@/data/profile'
       about={about}
       skills={skills}
       experience={experience}
-      email={profile.email}
       socialLinks={socialLinks}
     />
   </main>

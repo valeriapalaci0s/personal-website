@@ -70,7 +70,6 @@ Exactly as Valeria wrote it, with nothing more added.
 
 Just the links, with no copy:
 
-- Email: `vale.palacios181@gmail.com`
 - LinkedIn · X · Substack · GitHub (same URLs as in About me)
 
-The phone number stays off the site.
+No email and no phone number on the site.

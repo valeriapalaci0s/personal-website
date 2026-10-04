@@ -23,7 +23,6 @@ export const profile = {
   name: 'Valeria Palacios',
   role: 'Software Engineer @Microsoft',
   location: 'Based in NYC',
-  email: 'vale.palacios181@gmail.com',
   /** Pending: a resume without the phone number (spec, "Pendientes"). The link is hidden while undefined. */
   resumeUrl: undefined as string | undefined,
 };

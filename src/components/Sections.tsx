@@ -7,7 +7,6 @@ interface Props {
   about: string[];
   skills: SkillGroup[];
   experience: ExperienceItem[];
-  email: string;
   socialLinks: SocialLink[];
 }
 
@@ -31,7 +30,7 @@ function Section({ value, title, children }: { value: string; title: string; chi
 
 const linkClass = 'underline-offset-4 transition-colors hover:text-foreground hover:underline';
 
-export default function Sections({ about, skills, experience, email, socialLinks }: Props) {
+export default function Sections({ about, skills, experience, socialLinks }: Props) {
   return (
     <Accordion type="multiple" defaultValue={['about']} className="border-t border-border">
       <Section value="about" title="About me">
@@ -64,11 +63,6 @@ export default function Sections({ about, skills, experience, email, socialLinks
 
       <Section value="contact" title="Contact">
         <ul className="grid gap-3 text-muted-foreground">
-          <li>
-            <a href={`mailto:${email}`} className={linkClass}>
-              {email}
-            </a>
-          </li>
           {socialLinks.map((link) => (
             <li key={link.href}>
               <a href={link.href} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 ${linkClass}`}>
