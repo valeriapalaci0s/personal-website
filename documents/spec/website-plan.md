@@ -16,7 +16,7 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
 
 ## Decisiones de diseño
 - **Layout:** una sola página, una columna centrada (~560px de ancho máximo), mucho aire alrededor. Mobile-first; en móvil es la misma columna.
-- **Encabezado** (siempre visible, hace de tarjeta del About me):
+- **Encabezado** (siempre visible, hace de tarjeta del About me; **centrado**, mientras las secciones de abajo van alineadas a la izquierda):
   - Foto circular pequeña (≈ 72px), con placeholder hasta tener la de Valeria.
   - **Valeria Palacios** (peso Heavy).
   - Software Engineer @Microsoft · Based in NYC (peso Light, color secundario).

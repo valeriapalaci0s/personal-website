@@ -5,7 +5,7 @@ import { profile } from '@/data/profile';
 import photo from '@/assets/photo-placeholder.jpg';
 ---
 
-<header class="mb-12">
+<header class="mb-12 flex flex-col items-center text-center">
   <Image
     src={photo}
     alt={`Photo of ${profile.name}`}
@@ -19,7 +19,7 @@ import photo from '@/assets/photo-placeholder.jpg';
     {profile.role} · {profile.location}
   </p>
 
-  <div class="mt-4 -ml-2 flex flex-wrap items-center gap-x-3 gap-y-2">
+  <div class="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
     <SocialLinks />
     {
       profile.resumeUrl && (
