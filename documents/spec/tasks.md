@@ -7,13 +7,19 @@ Marca cada tarea con `[x]` al terminarla. Una rama y un PR por fase.
 ---
 
 ## Fase 1: Setup
-- [ ] 1.1 Crear el proyecto Astro (template minimal, TypeScript `strict`) en la raíz del repo
-- [ ] 1.2 Integrar `@astrojs/react` y Tailwind CSS
-- [ ] 1.3 Alias `@/*` en `tsconfig.json`; `shadcn init` y `shadcn add accordion`
-- [ ] 1.4 Instalar Figtree (`@fontsource-variable/figtree`) y definir los tokens en `global.css`: fondo `#F5F2EC`, texto `#2E2C27`, secundario y líneas
-- [ ] 1.5 `BaseLayout.astro` con `<head>`, fuentes y estilos globales
-- [ ] 1.6 `npm run build` corre `astro check` antes del build; verificar que pase sin errores
-- [ ] 1.7 Commit: "Set up Astro, Tailwind, shadcn and Figtree"
+- [x] 1.1 Crear el proyecto Astro (template minimal, TypeScript `strict`) en la raíz del repo
+- [x] 1.2 Integrar `@astrojs/react` y Tailwind CSS
+- [x] 1.3 Alias `@/*` en `tsconfig.json`; `shadcn init` y `shadcn add accordion`
+- [x] 1.4 Instalar Figtree (`@fontsource-variable/figtree`) y definir los tokens en `global.css`: fondo `#F5F2EC`, texto `#2E2C27`, secundario y líneas
+- [x] 1.5 `BaseLayout.astro` con `<head>`, fuentes y estilos globales
+- [x] 1.6 `npm run build` corre `astro check` antes del build; verificar que pase sin errores
+- [x] 1.7 Commit: "Set up Astro, Tailwind, shadcn and Figtree"
+
+> **Notas de la fase 1**
+> - Astro 7.3, Tailwind v4, shadcn `radix-nova`. Solo se instaló `accordion`; el `button.tsx` que crea `init` se borró porque no se usa.
+> - Tokens en `global.css`: texto secundario `#6a6762` (≈ 70% del texto, contraste 5.4:1 sobre el crema) y líneas `#cdcac5` (≈ 20%). Se quitó el bloque `.dark`: el sitio es solo modo claro.
+> - `shadcn` está en `devDependencies`: solo aporta `shadcn/tailwind.css` en el build. `npm audit` marca 7 vulnerabilidades altas en las dependencias de su CLI (`braces`/`micromatch`, DoS con patrones glob). No llegan al sitio publicado, y el fix de npm (bajar a shadcn 1.0.0) rompería el import, así que no se aplicó.
+> - Favicon provisional "VP" en `public/favicon.svg`; el definitivo va en la fase 3.
 
 ## Fase 2: Página
 - [ ] 2.1 `src/data/profile.ts`: nombre, rol, ubicación, links, skills y experience, tipados y copiados de `copy.md`
