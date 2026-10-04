@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProfileHeader from '@/components/ProfileHeader.astro';
+import Sections from '@/components/Sections';
+import { about, experience, profile, skills, socialLinks } from '@/data/profile';
 ---
 
-<!-- Temporary setup check — replaced by the real page in Phase 2 -->
 <BaseLayout>
-  <main class="mx-auto flex min-h-dvh max-w-[560px] flex-col justify-center px-4">
-    <h1 class="text-2xl font-extrabold">Valeria Palacios</h1>
-    <p class="font-light text-muted-foreground">Software Engineer @Microsoft · Based in NYC</p>
+  <main class="mx-auto w-full max-w-[560px] px-6 py-16 md:py-28">
+    <ProfileHeader />
+    <Sections
+      client:load
+      about={about}
+      skills={skills}
+      experience={experience}
+      email={profile.email}
+      socialLinks={socialLinks}
+    />
   </main>
 </BaseLayout>
