@@ -36,7 +36,7 @@ Marca cada tarea con `[x]` al terminarla. Una rama y un PR por fase.
 > - Íconos: X, Substack y GitHub salen de `simple-icons` (CC0). LinkedIn ya no está en esa librería (lo quitaron a pedido de LinkedIn), así que su logo está dibujado en `SocialIcon.tsx`. `lucide-react` ya no trae logos de marcas.
 > - El link **Resume ↗** está implementado pero oculto mientras `profile.resumeUrl` sea `undefined`. Se activa cuando haya un CV sin teléfono (tarea 4.1).
 > - El acordeón (`Sections.tsx`) carga con `client:load` y viene renderizado desde el servidor con About me abierto, así que se lee aunque falle el JS. Las etiquetas "more ↓ / less ↑" tienen `aria-hidden` y el estado lo anuncia `aria-expanded`.
-> - Foto: `src/assets/photo-placeholder.jpg` (silueta neutra generada localmente) hasta tener la de Valeria.
+> - Foto: `src/assets/photo.jpg` (la de Valeria; reemplazó al placeholder inicial).
 > - Verificado en 1280, 760 y 375px: columna centrada de 560px, las 4 secciones abren y cierran, los 9 links son correctos y abren en otra pestaña (salvo `mailto:`), y no hay scroll horizontal. En el panel del navegador, los clics con coordenadas no llegan bien a la página, así que el acordeón se probó con clics programáticos.
 
 ## Fase 3: Pulido
@@ -47,7 +47,7 @@ Marca cada tarea con `[x]` al terminarla. Una rama y un PR por fase.
 - [ ] 3.5 Commit: "Polish: a11y, SEO"
 
 ## Fase 4: Deploy y dominio
-- [ ] 4.1 Foto real de Valeria y CV público (sin teléfono) en el sitio
+- [ ] 4.1 CV público (sin teléfono) en el sitio. *(La foto real ya se agregó en la fase 2.)*
 - [ ] 4.2 Conectar el repo de GitHub a Vercel y revisar el preview deploy
 - [ ] 4.3 Comprar el dominio (Valeria) y configurar DNS y HTTPS en Vercel
 - [ ] 4.4 `site` en `astro.config.mjs` con el dominio final

@@ -17,7 +17,7 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
 ## Decisiones de diseño
 - **Layout:** una sola página, una columna centrada (~560px de ancho máximo), mucho aire alrededor. Mobile-first; en móvil es la misma columna.
 - **Encabezado** (siempre visible, hace de tarjeta del About me; **centrado**, mientras las secciones de abajo van alineadas a la izquierda):
-  - Foto circular pequeña (≈ 72px), con placeholder hasta tener la de Valeria.
+  - Foto circular pequeña (≈ 72px): `src/assets/photo.jpg`.
   - **Valeria Palacios** (peso Heavy).
   - Software Engineer @Microsoft · Based in NYC (peso Light, color secundario).
   - Fila de links: íconos de LinkedIn, X, Substack y GitHub, más un link de texto **Resume ↗**. Todos abren en otra pestaña y los íconos llevan nombre accesible.
@@ -66,7 +66,6 @@ public/
 4. **Deploy y dominio:** Vercel + dominio propio. Valeria compra el dominio; Claude guía.
 
 ## Pendientes
-- **Foto** de Valeria para el encabezado.
 - **CV público:** el PDF actual incluye el **teléfono**. Antes de publicarlo como `resume.pdf`, conviene una versión sin teléfono, o enlazar el CV de otra forma.
 
 ## Verificación

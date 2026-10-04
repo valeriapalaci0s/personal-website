@@ -14,7 +14,7 @@ Design and structure: see [spec/website-plan.md](spec/website-plan.md). The page
 Layout reference: Valeria's screenshot (profile card on the left, "Hello" block on the right).
 
 ### Left: profile card
-- **Photo:** circular headshot. TODO: Valeria's photo.
+- **Photo:** circular headshot (`src/assets/photo.jpg`).
 - **Name:** Valeria Palacios
 - **Role line:** Software Engineer @Microsoft
 - **Location line:** Based in NYC
