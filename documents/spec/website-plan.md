@@ -15,11 +15,11 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
 - **Screenshot de Valeria** (tarjeta con foto, nombre, rol e íconos sociales): inspira el encabezado.
 
 ## Decisiones de diseño
-- **Layout:** una sola página, una columna centrada (~560px de ancho máximo), mucho aire alrededor. Mobile-first; en móvil es la misma columna.
+- **Layout:** una sola página, una columna centrada (720px de ancho máximo), mucho aire alrededor. Mobile-first; en móvil es la misma columna.
 - **Encabezado** (siempre visible, hace de tarjeta del About me; **centrado**, mientras las secciones de abajo van alineadas a la izquierda):
-  - Foto circular pequeña (≈ 72px): `src/assets/photo.jpg`.
+  - Foto circular (96px): `src/assets/photo.jpg`.
   - **Valeria Palacios** (peso Heavy).
-  - Software Engineer @Microsoft · Based in NYC (peso Light, color secundario).
+  - Software Engineer @Microsoft · Based in NYC (peso Regular, color secundario).
   - Fila de links: íconos de LinkedIn, X, Substack y GitHub, más un link de texto **Resume ↗**. Todos abren en otra pestaña y los íconos llevan nombre accesible.
 - **Secciones en acordeón**, en este orden: **About me · Skills · Experience · Contact**.
   - Cada fila: título a la izquierda y "more ↓" / "less ↑" a la derecha, separadas por líneas finas.
@@ -28,7 +28,7 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
   - Skills: las 4 líneas por categoría de `copy.md`.
   - Experience: las 4 líneas mínimas de `copy.md` (empresa · rol o años · descripción), sin agregar nada.
   - Contact: solo los links (LinkedIn, X, Substack, GitHub), sin texto ni email.
-- **Tipografía:** *Figtree* (alternativa gratuita a Avenir), self-hosted. Light (300) para el texto y Heavy (800) para el nombre. Tamaños chicos, como Nicolas.
+- **Tipografía:** *Figtree* (alternativa gratuita a Avenir), self-hosted. Regular (400) para el texto y Heavy (800) para el nombre. Texto de 17–18px con interlineado amplio (1.75) y títulos de sección de 18–20px, para que el contenido largo se lea cómodo; se descartaron Light y los tamaños chicos de Nicolas por legibilidad.
 - **Color:** crema cálido. Fondo `#F5F2EC`, texto `#2E2C27`, texto secundario el mismo tono a ~70%, líneas finas al ~20%. Sin color de acento. Solo modo claro.
 - **Movimiento:** solo la animación de abrir y cerrar del acordeón y el hover en links. Todo respeta `prefers-reduced-motion`.
 
