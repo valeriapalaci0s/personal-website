@@ -35,9 +35,13 @@ export const socialLinks: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/valeriapalaci0s', icon: 'github' },
 ];
 
+/** Valeria's own text, word for word. */
 export const about: string[] = [
-  "I'm a software engineer at Microsoft in New York, building AI for network diagnostics. I grew up in Ecuador, studied Computer Science at Georgia Tech, and have been hooked on building things since my first CS class in high school.",
-  "Outside of code, you'll find me playing tennis, running or doing yoga. I love the logic of computer science and how present sports make me feel. One makes me think. The other makes me present.",
+  "I was born and raised in Ecuador. I went to a Jewish school (though I’m not Jewish), where I was exposed to Hebrew and learned English. I’ve always had a fascination with the world: different cultures, food, music, and especially how much our environment shapes us.",
+  "Sports have always been a huge part of my life. I was captain of my high school volleyball team, and I enjoy playing sports as much as I enjoy watching them. I’m fascinated by the role the mind plays in exceptional athletes. Today, you’ll usually find me playing tennis, running, or doing yoga.",
+  "I’ve always had a natural inclination toward math and science. I took a computer science class in high school, loved the feeling of building something, and eventually switched my major to Computer Science at Georgia Tech. After graduating, I moved to New York and started working as a software engineer.",
+  "I’ve always been fascinated by how the mind and body work together. I love the rationality and logic of computer science. I equally love how present and in my body tennis and yoga make me feel. One makes me think. The other makes me present.",
+  "I want to build and scale things that make people’s lives better, surround myself with people who push me, and experience as much of this world as I possibly can.",
 ];
 
 export const skills: SkillGroup[] = [
