@@ -1,0 +1,23 @@
+---
+import SocialIcon from '@/components/SocialIcon';
+import { socialLinks } from '@/data/profile';
+---
+
+<ul class="flex items-center gap-1" aria-label="Social links">
+  {
+    socialLinks.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${link.label} (opens in a new tab)`}
+          title={link.label}
+          class="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+        >
+          <SocialIcon name={link.icon} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

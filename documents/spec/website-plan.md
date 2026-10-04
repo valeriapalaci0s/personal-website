@@ -16,8 +16,8 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
 
 ## Decisiones de diseño
 - **Layout:** una sola página, una columna centrada (~560px de ancho máximo), mucho aire alrededor. Mobile-first; en móvil es la misma columna.
-- **Encabezado** (siempre visible, hace de tarjeta del About me):
-  - Foto circular pequeña (≈ 72px), con placeholder hasta tener la de Valeria.
+- **Encabezado** (siempre visible, hace de tarjeta del About me; **centrado**, mientras las secciones de abajo van alineadas a la izquierda):
+  - Foto circular pequeña (≈ 72px): `src/assets/photo.jpg`.
   - **Valeria Palacios** (peso Heavy).
   - Software Engineer @Microsoft · Based in NYC (peso Light, color secundario).
   - Fila de links: íconos de LinkedIn, X, Substack y GitHub, más un link de texto **Resume ↗**. Todos abren en otra pestaña y los íconos llevan nombre accesible.
@@ -27,7 +27,7 @@ Segunda versión, desde cero. La v1 (Astro + shadcn, diseño oscuro estilo Sonor
   - About me: los dos párrafos cortos de `copy.md`.
   - Skills: las 4 líneas por categoría de `copy.md`.
   - Experience: las 4 líneas mínimas de `copy.md` (empresa · rol o años · descripción), sin agregar nada.
-  - Contact: solo los links (email, LinkedIn, X, Substack, GitHub), sin texto.
+  - Contact: solo los links (LinkedIn, X, Substack, GitHub), sin texto ni email.
 - **Tipografía:** *Figtree* (alternativa gratuita a Avenir), self-hosted. Light (300) para el texto y Heavy (800) para el nombre. Tamaños chicos, como Nicolas.
 - **Color:** crema cálido. Fondo `#F5F2EC`, texto `#2E2C27`, texto secundario el mismo tono a ~70%, líneas finas al ~20%. Sin color de acento. Solo modo claro.
 - **Movimiento:** solo la animación de abrir y cerrar del acordeón y el hover en links. Todo respeta `prefers-reduced-motion`.
@@ -66,9 +66,7 @@ public/
 4. **Deploy y dominio:** Vercel + dominio propio. Valeria compra el dominio; Claude guía.
 
 ## Pendientes
-- **Foto** de Valeria para el encabezado.
 - **CV público:** el PDF actual incluye el **teléfono**. Antes de publicarlo como `resume.pdf`, conviene una versión sin teléfono, o enlazar el CV de otra forma.
-- **Email en Contact:** incluido como link; Valeria puede pedir quitarlo.
 
 ## Verificación
 - `astro check` y `npm run build` sin errores.

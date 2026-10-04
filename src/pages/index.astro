@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProfileHeader from '@/components/ProfileHeader.astro';
+import Sections from '@/components/Sections';
+import { about, experience, skills, socialLinks } from '@/data/profile';
+---
+
+<BaseLayout>
+  <main class="mx-auto w-full max-w-[560px] px-6 py-16 md:py-28">
+    <ProfileHeader />
+    <Sections
+      client:load
+      about={about}
+      skills={skills}
+      experience={experience}
+      socialLinks={socialLinks}
+    />
+  </main>
+</BaseLayout>

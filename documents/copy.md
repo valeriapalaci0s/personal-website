@@ -4,7 +4,7 @@ Language: English. Audience: recruiters and other engineers.
 Voice: warm, direct, curious, with the mind–body thread running through everything.
 Sections, in order: **About me · Skills · Experience · Contact** (no Projects section).
 
-Status: **draft 4**. Valeria guides, Claude writes. Marked `TODO` where input is still needed.
+Status: **draft 5**. Valeria guides, Claude writes. Marked `TODO` where input is still needed.
 Design and structure: see [spec/website-plan.md](spec/website-plan.md). The page is a single column with the profile card as the header and accordion sections (About me open by default).
 
 ---
@@ -14,7 +14,7 @@ Design and structure: see [spec/website-plan.md](spec/website-plan.md). The page
 Layout reference: Valeria's screenshot (profile card on the left, "Hello" block on the right).
 
 ### Left: profile card
-- **Photo:** circular headshot. TODO: Valeria's photo.
+- **Photo:** circular headshot (`src/assets/photo.jpg`).
 - **Name:** Valeria Palacios
 - **Role line:** Software Engineer @Microsoft
 - **Location line:** Based in NYC
@@ -30,23 +30,17 @@ Layout reference: Valeria's screenshot (profile card on the left, "Hello" block 
 - **Buttons:**
   - **Resume:** opens or downloads `Palacios_Valeria_SWE.pdf`
   - TODO: second button. The reference's "Projects" doesn't apply (no Projects section). Options: **Experience** or **Contact**, both scrolling to their section, or no second button.
-- **Text** (two short paragraphs, sized for this layout):
+- **Text:** Valeria's own About me, word for word (not edited):
 
-> I'm a software engineer at Microsoft in New York, building AI for network diagnostics. I grew up in Ecuador, studied Computer Science at Georgia Tech, and have been hooked on building things since my first CS class in high school.
+> I was born and raised in Ecuador. I went to a Jewish school (though I’m not Jewish), where I was exposed to Hebrew and learned English. I’ve always had a fascination with the world: different cultures, food, music, and especially how much our environment shapes us.
 >
-> Outside of code, you'll find me playing tennis, running or doing yoga. I love the logic of computer science and how present sports make me feel. One makes me think. The other makes me present.
-
-### Longer version (kept in case the layout has room, or for a "Read more")
-
-> I was born and raised in Ecuador and went to a Jewish school, though I'm not Jewish. That's where I learned English, picked up some Hebrew, and first noticed how much our environment shapes who we become. I've been curious about the world ever since: its cultures, its food, its music.
+> Sports have always been a huge part of my life. I was captain of my high school volleyball team, and I enjoy playing sports as much as I enjoy watching them. I’m fascinated by the role the mind plays in exceptional athletes. Today, you’ll usually find me playing tennis, running, or doing yoga.
 >
-> Math and science always came naturally to me. A computer science class in high school gave me my first taste of building something from nothing, and I never lost that feeling. I switched my major to Computer Science at Georgia Tech, then moved to New York to work as a software engineer at Microsoft.
+> I’ve always had a natural inclination toward math and science. I took a computer science class in high school, loved the feeling of building something, and eventually switched my major to Computer Science at Georgia Tech. After graduating, I moved to New York and started working as a software engineer.
 >
-> Sports have been part of my life for just as long. I captained my high school volleyball team, and today you'll find me playing tennis, running or doing yoga. I'm fascinated by what sets exceptional athletes apart, and how much of it happens in the mind.
+> I’ve always been fascinated by how the mind and body work together. I love the rationality and logic of computer science. I equally love how present and in my body tennis and yoga make me feel. One makes me think. The other makes me present.
 >
-> That's the thread through everything I do: the mind and the body. I love the logic and rigor of computer science, and I love how present tennis and yoga make me feel. One makes me think. The other makes me present.
->
-> I want to build and scale things that make people's lives better, surround myself with people who push me, and see as much of this world as I can.
+> I want to build and scale things that make people’s lives better, surround myself with people who push me, and experience as much of this world as I possibly can.
 
 ---
 
@@ -76,7 +70,6 @@ Exactly as Valeria wrote it, with nothing more added.
 
 Just the links, with no copy:
 
-- Email: `vale.palacios181@gmail.com`
 - LinkedIn · X · Substack · GitHub (same URLs as in About me)
 
-The phone number stays off the site.
+No email and no phone number on the site.
