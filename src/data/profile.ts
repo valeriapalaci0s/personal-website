@@ -45,7 +45,7 @@ export const about: string[] = [
 
 export const skills: SkillGroup[] = [
   { category: "Languages", items: ["Python", "TypeScript", "JavaScript", "C#", "KQL"] },
-  { category: "AI & Agents", items: ["Agentic AI", "RAG", "Evals", "Agent Harnesses"] },
+  { category: "AI & Agents", items: ["Agentic AI", "RAG", "Evals", "Agent Harnesses", "MCP Servers"] },
   { category: "Frontend", items: ["React", "HTML/CSS"] },
   { category: "Backend & Cloud", items: ["Azure", "REST APIs"] },
   { category: "Product", items: ["Full-Stack Development", "Customer-Facing Engineering", "Product Development"] },
