@@ -47,9 +47,9 @@ export default function Sections({ about, skills, experience, socialLinks }: Pro
       <Section value="skills" title="Skills">
         <dl className="grid gap-4">
           {skills.map((group) => (
-            <div key={group.category} className="grid gap-0.5 sm:grid-cols-[9rem_1fr] sm:gap-6">
+            <div key={group.category} className="grid gap-0.5 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
               <dt className="text-muted-foreground">{group.category}</dt>
-              <dd>{group.items.join(', ')}</dd>
+              <dd>{group.items.join(' · ')}</dd>
             </div>
           ))}
         </dl>
