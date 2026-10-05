@@ -46,12 +46,13 @@ Layout reference: Valeria's screenshot (profile card on the left, "Hello" block 
 
 ## Skills
 
-Source: resume. Kept to the essentials.
+Valeria's own list, word for word.
 
-- **Languages:** TypeScript, JavaScript, Python, C#, Java
-- **Frameworks:** React
-- **Cloud:** Azure, Kubernetes (AKS), distributed systems, REST APIs
-- **AI:** Agentic AI, RAG, evals, semantic search, prompt engineering
+- **Languages:** Python · TypeScript · JavaScript · C# · KQL
+- **AI & Agents:** Agentic AI · RAG · Evals · Agent Harnesses
+- **Frontend:** React · HTML/CSS
+- **Backend & Cloud:** Azure · REST APIs
+- **Product:** Full-Stack Development · Customer-Facing Engineering · Product Development
 
 ---
 
