@@ -44,11 +44,11 @@ export const about: string[] = [
 ];
 
 export const skills: SkillGroup[] = [
-  { category: "Languages", items: ["Python", "TypeScript", "JavaScript", "C#", "SQL"] },
-  { category: "AI & Agents", items: ["Agentic AI", "RAG", "Evals", "Semantic Search", "Agent Harnesses", "LLM Applications"] },
+  { category: "Languages", items: ["Python", "TypeScript", "JavaScript", "C#", "KQL"] },
+  { category: "AI & Agents", items: ["Agentic AI", "RAG", "Evals", "Agent Harnesses"] },
   { category: "Frontend", items: ["React", "HTML/CSS"] },
-  { category: "Backend & Cloud", items: ["Azure", "REST APIs", "Kusto", "Distributed Systems"] },
-  { category: "Product", items: ["Full-Stack Development", "Customer-Facing Engineering", "Product Development", "Technical Discovery"] },
+  { category: "Backend & Cloud", items: ["Azure", "REST APIs"] },
+  { category: "Product", items: ["Full-Stack Development", "Customer-Facing Engineering", "Product Development"] },
 ];
 
 export const experience: ExperienceItem[] = [

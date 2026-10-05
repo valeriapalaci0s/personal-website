@@ -48,11 +48,11 @@ Layout reference: Valeria's screenshot (profile card on the left, "Hello" block 
 
 Valeria's own list, word for word.
 
-- **Languages:** Python · TypeScript · JavaScript · C# · SQL
-- **AI & Agents:** Agentic AI · RAG · Evals · Semantic Search · Agent Harnesses · LLM Applications
+- **Languages:** Python · TypeScript · JavaScript · C# · KQL
+- **AI & Agents:** Agentic AI · RAG · Evals · Agent Harnesses
 - **Frontend:** React · HTML/CSS
-- **Backend & Cloud:** Azure · REST APIs · Kusto · Distributed Systems
-- **Product:** Full-Stack Development · Customer-Facing Engineering · Product Development · Technical Discovery
+- **Backend & Cloud:** Azure · REST APIs
+- **Product:** Full-Stack Development · Customer-Facing Engineering · Product Development
 
 ---
 
